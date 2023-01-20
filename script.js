@@ -1,5 +1,6 @@
 function getComputerChoice(){
     let result = Math.floor(Math.random() * 3 + 1);
+    //console.log(result);
     if (result === 1){
         return "Rock"
     }else if (result === 2){
@@ -62,9 +63,17 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+function game(){
 
-console.log(getComputerChoice());
+    for (i = 0; i < 5; i++){
+        let playerSelection = prompt("Enter choice here:")
+        let computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection)+ i);
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+
+
+console.log(game());
